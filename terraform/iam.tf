@@ -14,7 +14,7 @@ resource "aws_iam_role" "ec2_role" {
     ]
   })
 
-  tags       = var.tags
+  tags = var.tags
 
 }
 
@@ -40,7 +40,7 @@ resource "aws_iam_policy" "s3_read_put" {
     ]
   })
 
-  tags       = var.tags
+  tags = var.tags
 }
 
 
@@ -48,5 +48,4 @@ resource "aws_iam_role_policy_attachment" "attach_s3_policy" {
   role       = aws_iam_role.ec2_role.name
   policy_arn = aws_iam_policy.s3_read_put.arn
 
-  tags       = var.tags
 }
